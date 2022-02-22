@@ -1,6 +1,7 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
+  target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -43,20 +44,18 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta:{
+      title: 'Software_Whatsapp',
+      author:'Khonepaserth SOUNAKHEN'
+    },
     manifest: {
+      name: 'Software_Whatsapp',
+      short_name: 'Software_Whatsapp',
       lang: 'en',
-      title: 'test',
-      'og:title': 'test',
-      description: 'test',
-      'og:description': 'test',
-      theme_color: '#FFFFFF',
-      background_color: '#FFFFFF',
-      icons: [{
-        src: `/icon.png`,
-        size: "512x512",
-        type: "image/png"
-      }
-      ]
+    },
+    icon: {
+      fileName: 'icon.png',
+      sizes: [64, 120, 144, 152, 192, 384, 512]
     }
   },
 
