@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <center style="margin:20px 0 20px 0">
     <van-image  justify="center" width="200" height="200" src="https://raw.githubusercontent.com/ZOYBAD14xx/CeitSoftWareWeb/main/image/Logo.png" />
     <h2 id="text">WhatsApp help</h2>
@@ -58,7 +58,7 @@ export default {
 #text{
   color: #169fc6;
 }
-#app{
+*{
   font-family: "BoonHome";
 }
 </style>
