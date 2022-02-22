@@ -54,8 +54,8 @@ export default {
       lang: 'en',
     },
     icon: {
-      fileName: '/software.png',
-      sizes: [64, 120, 144, 152, 192, 384, 512]
+      fileName: 'software.png',
+      sizes: 512
     }
   },
 
