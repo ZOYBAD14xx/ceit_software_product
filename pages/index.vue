@@ -59,7 +59,7 @@ export default {
   color: #169fc6;
 }
 *{
-  font-family: "BoonHome";
+  font-family: 'Noto Serif Lao', sans-serif ;
 }
 </style>
 </style>
