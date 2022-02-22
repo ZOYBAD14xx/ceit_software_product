@@ -8,12 +8,14 @@
     <van-form @submit="onSubmit" style="margin-top:30px">
       <van-cell-group inset>
         <van-field
+          autocomplete="off"
           v-model="phoneNumber"
           name='phoneNumber'
           label='ເບີໂທລະສັບ'
           placeholder='ກະລຸນາໃສ່ເບີໂທ ຕົວຢ່າງ: 20xxxxxxxx'
         />
         <van-field
+          autocomplete="off"
           v-model="msg"
           name='msg'
           label='ຂໍ້ຄວາມ'
