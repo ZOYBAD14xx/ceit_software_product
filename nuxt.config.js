@@ -52,10 +52,9 @@ export default {
       name: 'Software_Whatsapp',
       short_name: 'Software_Whatsapp',
       lang: 'en',
-      seWebmanifestExtension: false
     },
     icon: {
-      fileName: 'software.png',
+      fileName: '../../software.png',
       sizes: [64, 120, 144, 152, 192, 384, 512]
     }
   },
