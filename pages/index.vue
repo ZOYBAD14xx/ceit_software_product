@@ -29,6 +29,11 @@
           ສົ່ງ
         </van-button>
       </div>
+      <center>
+      <div id="text">
+        <p>ຈຳນວນຜູ້ເຂົ້າຊົມທັງໝົດ {{countUsing}} ຄັ້ງ</p>
+      </div>
+      </center>
     </van-form>
     <van-tabbar v-model="active">
   <van-tabbar-item> &copy; {{ new Date().getFullYear() }} —
@@ -48,17 +53,19 @@ export default {
       phoneNumber: '',
       msg: '',
       url: 'https://api.whatsapp.com/send',
-      weburl: 'https://software-whatsapp.netlify.app'
+      countUsing: ''
     }
+  },
+  async fetch () {
+    await countapi.hit('software-whatsapp.netlify.app', 'visits')
+      .then((result) => {
+        this.countUsing = result.value
+        console.log('object :>> ', this.countUsing)
+      })
   },
   methods: {
     onSubmit () {
       window.location.href = this.url + '/?phone=' + this.code + this.phoneNumber + '&text=' + this.msg
-    },
-    onCountUsing () {
-      countapi.hit('software-whatsapp.netlify.app', 'visits').then((result) => {
-        console.log(result.value)
-      })
     }
   }
 }
