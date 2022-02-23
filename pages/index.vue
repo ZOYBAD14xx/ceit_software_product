@@ -8,22 +8,24 @@
     <van-form @submit="onSubmit" style="margin-top:30px">
       <van-cell-group inset>
         <van-field
-          autocomplete="off"
+        autocomplete="off"
           v-model="phoneNumber"
           name='phoneNumber'
           label='ເບີໂທລະສັບ'
           placeholder='ກະລຸນາໃສ່ເບີໂທ ຕົວຢ່າງ: 20xxxxxxxx'
+          :rules="[{ required: true }]"
         />
         <van-field
-          autocomplete="off"
+        autocomplete="off"
           v-model="msg"
           name='msg'
           label='ຂໍ້ຄວາມ'
           placeholder='ກະລຸນາໃສ່ຂໍ້ຄວາມທີ່ຢາກສົ່ງ'
+          :rules="[{ required: true }]"
         />
       </van-cell-group>
       <div style="margin: 16px">
-        <van-button round block color="#1989fa" native-type="submit">
+        <van-button @click="onCountUsing" round block color="#1989fa" native-type="submit">
           ສົ່ງ
         </van-button>
       </div>
@@ -37,6 +39,7 @@
 </template>
 
 <script>
+import countapi from 'countapi-js'
 export default {
   name: 'IndexPage',
   data () {
@@ -44,12 +47,18 @@ export default {
       code: '+856',
       phoneNumber: '',
       msg: '',
-      url: 'https://api.whatsapp.com/send'
+      url: 'https://api.whatsapp.com/send',
+      weburl: 'https://software-whatsapp.netlify.app'
     }
   },
   methods: {
     onSubmit () {
       window.location.href = this.url + '/?phone=' + this.code + this.phoneNumber + '&text=' + this.msg
+    },
+    onCountUsing () {
+      countapi.hit('software-whatsapp.netlify.app', 'visits').then((result) => {
+        console.log(result.value)
+      })
     }
   }
 }
@@ -57,9 +66,9 @@ export default {
 <style>
 #text{
   color: #169fc6;
-}
-*{
   font-family: 'Noto Serif Lao', sans-serif ;
 }
-</style>
+div{
+  font-family: 'Noto Serif Lao', sans-serif ;
+}
 </style>
