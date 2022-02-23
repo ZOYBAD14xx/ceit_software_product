@@ -45,6 +45,8 @@
 
 <script>
 import countapi from 'countapi-js'
+import laoCurrency from '@lailao10x/lao-currency'
+
 export default {
   name: 'IndexPage',
   data () {
@@ -60,6 +62,7 @@ export default {
     await countapi.hit('software-whatsapp.netlify.app', 'visits')
       .then((result) => {
         this.countUsing = result.value
+        this.countUsing = laoCurrency(this.countUsing).format()
         //console.log('object :>> ', this.countUsing)
       })
   },
