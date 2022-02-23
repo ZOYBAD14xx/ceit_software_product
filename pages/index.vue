@@ -60,7 +60,7 @@ export default {
     await countapi.hit('software-whatsapp.netlify.app', 'visits')
       .then((result) => {
         this.countUsing = result.value
-        console.log('object :>> ', this.countUsing)
+        //console.log('object :>> ', this.countUsing)
       })
   },
   methods: {
