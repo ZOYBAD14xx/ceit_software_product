@@ -12,6 +12,7 @@
     "lintfix": "npm run lint:js -- --fix"
   },
   "dependencies": {
+    "@lailao10x/lao-currency": "0.0.13",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.19.3",
     "countapi-js": "^1.0.2",
