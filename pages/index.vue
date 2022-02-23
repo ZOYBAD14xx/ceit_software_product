@@ -35,9 +35,9 @@
       </div>
       </center>
     </van-form>
-    <van-tabbar v-model="active">
-  <van-tabbar-item> &copy; {{ new Date().getFullYear() }} —
-        <strong>CEIT Software</strong>
+    <van-tabbar>
+  <van-tabbar-item id="text"> &copy; {{ new Date().getFullYear() }} —
+        <strong><a id="text" href="https://ceit-software.netlify.app">CEIT Software</a></strong>
   </van-tabbar-item>
   </van-tabbar>
   </div>
